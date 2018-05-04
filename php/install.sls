@@ -1,4 +1,4 @@
-{% for pkg in ['php','','' ]%} 
+{% for pkg in ['php7-7.0.28-1.el6.x86_64.rpm','php7-libmemcached-1.0.18-1.el6.x86_64.rpm','php7-rabbitmq-c-0.8.0-1.el6.x86_64.rpm' ]%} 
 copy_install_rpm_{{ pkg }}: 
   file.manager: 
     - name: /opt/{{ pkg }}
@@ -21,4 +21,3 @@ copy_php_init:
     - name: /etc/init.d/php-fpm  
     - source: salt://php/files/php-fpm 
     - mode: 0755
-
