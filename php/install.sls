@@ -1,3 +1,21 @@
+install_dep_pkg: 
+  pkg.installed:
+    - names: 
+      - curl 
+      - libcurl-devel 
+      - libjpeg-devel
+      - libpng-devel
+      - libjped-devel
+      - freetype-devel 
+      - libxslt-devel  
+      - boost-devel
+      - gperf
+      - libevent-devel 
+      - libuuid-devel
+      - libgearman 
+      - libgearman-devel
+      
+
 {% for pkg in ['php7-7.0.28-1.el6.x86_64.rpm','php7-libmemcached-1.0.18-1.el6.x86_64.rpm','php7-rabbitmq-c-0.8.0-1.el6.x86_64.rpm' ]%} 
 copy_install_rpm_{{ pkg }}: 
   file.manager: 
